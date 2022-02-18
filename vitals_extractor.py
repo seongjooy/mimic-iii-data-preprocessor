@@ -48,3 +48,5 @@ if __name__ == '__main__':
         )
 
         merged_csv.to_csv('chart_events.csv')
+
+vitals_extractor()

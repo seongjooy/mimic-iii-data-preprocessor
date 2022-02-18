@@ -2,7 +2,7 @@ import pandas as pd
 
 if __name__ == '__main__':
     # CONVERTING CHARTEVENTS TO INPUT FORM, AND ADDING MAP VALUE
-    df = pd.read_csv('chart_events.csv')
+    df = pd.read_csv('chart_events_sorted.csv')
     df = df.drop(['VALUEUOM'], axis=1)
 
     df = df.pivot_table(values='VALUE', index=['SUBJECT_ID',
@@ -15,7 +15,7 @@ if __name__ == '__main__':
 
     df['map'] = (2 * df['dbp'] + df['sbp']) / 3
 
-    df.to_csv('chart_events_map.csv', index=False)
+    df.to_csv('chart_events_map_final.csv', index=False)
 
     # df = pd.read_csv('chart_events_map.csv')
     # total of 8,618,649 rows
