@@ -37,4 +37,4 @@ At this point, the .csv file contains patient information on vital signs, guaran
 'sample_chart.py'<br/>
 **Input**: 'chart_events_final.pkl' –  <br/>
 **Output**: 'chart_events_sampled.csv' <br/>
-Description
+Not used in the process – an intermediate file to test methods on a smaller scale; sample_chart.py reduces the final pre-processed data table to 1000 patients, allowing for quicker unit testing.
