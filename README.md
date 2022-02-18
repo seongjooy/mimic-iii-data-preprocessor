@@ -1,5 +1,5 @@
 # Extracting Vital Sign Data from the MIMIC-III Dataset
-Purpose: Extracting vital sign data of patients from the raw MIMIC-III dataset, into a usable format for training an XGBoost model for predicting the onset of septic shock (https://github.com/seongjooy/septic-shock-predictor). <br/> <br/>
+Purpose: Extracting vital sign data of patients from the raw MIMIC-III dataset, into a usable format for training an XGBoost model for predicting the onset of septic shock (base for: https://github.com/seongjooy/septic-shock-predictor). <br/> <br/>
 The dataset can be found at: https://physionet.org/content/mimiciii/1.4/. <br/> <br/>
 
 **Input**: Raw MIMIC-III data file, .csv.gz, consisting of de-identified patient chart event information. <br/>
