@@ -16,22 +16,22 @@ Data from MIMIC-III has columns that are not explicitly labelled (ex. 'Heart Rat
 'vitals_extractor.py'<br/>
 **Input**: CHARTEVENTS.csv.gz – zip file containing comprehensive information of patients <br/>
 **Output**: chart_events.csv – zip file containing only vital sign information of patients <br/>
-Description
+First unzips the data file. Filters the zip file containing all the chartevents of patients to just the vital sign information of patients. Filtering is done with help from the 'vitals_id.py' file, used to identify which columns to keep or drop.
 
 'csv_file_process.py'<br/>
 **Input**: 'chart_events.csv' – from previous step <br/>
 **Output**: 'chart_events_sorted.csv' – .csv file containing vital sign info that are consecutive for at least 6 hours <br/>
-Description
+Patient vital sign data is not guaranteed to last for at least 6 hours, which is a requirement for the study to be done. Therefore, this file drops all patient cases where the vital sign data does not last for a minimum of 6 hours.
 
 'csv_pivot_and_reformat.py'<br/>
 **Input**: 'chart_events_sorted.csv' – from previous step <br/>
 **Output**: 'chart_events_final.csv' –  <br/>
-Description
+The data table is not compatible with the AI model to be utilized. Hence, the table is pivotted in a way so that it can be directly input to the AI model. Further, an additional feature is generated which is tested and proved to improve the performance of the model.
 
 'main.py'<br/>
 **Input**: 'chart_events_final.csv' – from previous step <br/>
 **Output**: 'chart_events_by_hour.csv' –  <br/>
-Description
+At this point, the .csv file contains patient information on vital signs, guaranteed to be consecutive for at least 6 hours. However, data from MIMIC-III is recorded in intervals of 15 minutes. Since the model requires data in 1-hour intervals (ie. 10:15, 11:15, 12:15, ... , 15:15), data should be grouped by their minute-hand times. A total of 4 files can be generated (:00, :15, :30, :45), of which 6 hours of data can be extracted from each file as one valid train case. 
 
 
 'sample_chart.py'<br/>
