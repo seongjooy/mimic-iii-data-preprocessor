@@ -10,7 +10,7 @@ The dataset can be found at: https://physionet.org/content/mimiciii/1.4/. <br/> 
 'vitals_id.py'<br/>
 **Input**: None   <br/>
 **Output**: None   <br/>
-Data from MIMIC-III has columns that are not explicitly labelled (ex. 'Heart Rate'), but instead are number-coded (ex. '210500') which correspond to each element. Hence, to filter vital signs, their respective IDs were mapped from 'D_ITEMS.csv' and the required number-codes saved here in 'vitals_id.py'.
+Data from MIMIC-III has columns that are not explicitly labelled (ex. 'Heart Rate'), but instead are number-coded (ex. '210500') which correspond to each element. Hence, to filter vital signs, their respective IDs were mapped from 'D_ITEMS.csv', the MIMIC-III source file, and the required number-codes saved here in 'vitals_id.py'.
 
 
 'vitals_extractor.py'<br/>
