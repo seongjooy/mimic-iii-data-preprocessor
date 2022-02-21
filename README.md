@@ -16,12 +16,12 @@ Data from MIMIC-III has columns that are not explicitly labelled (ex. 'Heart Rat
 'vitals_extractor.py'<br/>
 **Input**: CHARTEVENTS.csv.gz – zip file containing comprehensive information of patients <br/>
 **Output**: chart_events.csv – zip file containing only vital sign information of patients <br/>
-First unzips the data file. Filters the zip file containing all the chartevents of patients to just the vital sign information of patients. Filtering is done with help from the 'vitals_id.py' file, used to identify which columns to keep or drop.
+First unzips the data file. Filters out all the chartevents of patients, obtaining only the vital sign info of patients. The'vitals_id.py' file is used to identify which columns to keep or drop.
 
 'csv_file_process.py'<br/>
 **Input**: 'chart_events.csv' – from previous step <br/>
 **Output**: 'chart_events_sorted.csv' – .csv file containing vital sign info that are consecutive for at least 6 hours <br/>
-Patient vital sign data is not guaranteed to last for at least 6 hours, which is a requirement for the study to be done. Therefore, this file drops all patient cases where the vital sign data does not last for a minimum of 6 hours.
+The model requires at least 6 consecutive hours of vital sign data in order to function, which is not guaranteed. Therefore, this file drops all patient cases where the vital sign data does not last for a minimum of 6 hours.
 
 'csv_pivot_and_reformat.py'<br/>
 **Input**: 'chart_events_sorted.csv' – from previous step <br/>
